@@ -1,0 +1,12 @@
+file reut2-017.sgm wasn't encoded in utf-8 initially so I converted it before reading the file
+
+initially unable to extract all titles and body text for each of the 21578 articles.
+To read the body content of all the articles, I had to change my line of code from
+    body = article.find('body')
+to
+    body = article.find('body') or article.find('text') or article.find('content')
+because some articles use different tags.
+
+However, I was unable to extract 21578 titles because 737 articles have missing titles.
+
+I chose to move forward without extracting all the titles.
